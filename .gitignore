@@ -1,0 +1,96 @@
+# Project files
+**.user
+
+# Visual Studio
+**.pdb
+**.filters
+**.vcxproj
+**.tlog
+**.sln
+**.vcxprojResolveAssemblyReference.cache
+**.nativecodeanalysis.all.xml
+**.nativecodeanalysis.xml
+**.VC.opendb
+**.VC.db
+**.lastbuildstate
+.vs
+.vscode
+
+# CodeLite
+**.project
+
+# GMake
+**.make
+Makefile
+
+# QtCreator
+**.pro
+
+# Code::Blocks
+**.cbp
+**.workspace
+**.layout
+**.save-failed
+**.cbTemp
+**.cscope_file_list
+**.depend
+
+# XCode
+**.pbxuser
+
+# CLion/JetBrains
+**.iml
+.idea/
+
+# KDevelop
+*.kdev4
+.kdev4
+.kdev_include_paths
+
+# Nano, Vi
+.*.swp
+
+# GEdit
+*~
+
+# KPart
+.*.kate-swp
+
+# Others
+.gdb_history
+callgrind.out.*
+
+# Compiled Object files
+**.slo
+**.lo
+**.o
+**.obj
+**.obj.enc
+
+**_i.c
+**_p.c
+**.idb
+**.ilk
+**.meta
+**.pch
+**.pgc
+**.pgd
+**.rsp
+**.sbr
+**.tlb
+**.tli
+**.tlh
+**.tmp
+**.vspscc
+**.vssscc
+
+**.dll
+**.lib
+**.a
+
+# Working Directories
+wdirs/x64
+wdirs/x86
+
+# Packages
+package_*
