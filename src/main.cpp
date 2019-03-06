@@ -10,6 +10,7 @@
 #include <limits>
 #include <set>
 #include <iostream>
+#include <chrono>
 #include "imageutil.hpp"
 
 unsigned MaxVerticalPixelsBetweenYLevels { 15 };
@@ -62,6 +63,8 @@ int main()
         std::cerr << "File " << inputFilepath << " not found. Exiting...";
         return 1;
     }
+
+    auto start = std::chrono::high_resolution_clock::now();
 
     Nz::Image inputImage;
     inputImage.LoadFromFile(inputFilepath);
@@ -143,10 +146,13 @@ int main()
     }
 
     output.SaveToFile(outputFilepath);
+    auto end = std::chrono::high_resolution_clock::now();
 
     Nz::Vector3ui finalSize = output.GetSize();
     NazaraNotice(Nz::String { "Saved to "}.Append(outputFilepath).Append(". Dimensions: " ).Append(Nz::String::Number(size.x)).Append("x").Append(Nz::String::Number(size.y)));
     NazaraNotice(Nz::String { "Character dimensions: " }.Append(Nz::String::Number(maxRectSize.x)).Append("x").Append(Nz::String::Number(maxRectSize.y)));
+    NazaraNotice(Nz::String { "Elapsed time: " }.Append(Nz::String::Number(std::chrono::duration_cast<std::chrono::seconds>(end - start).count()))
+                 .Append("s"));
 
     return 0;
 }
