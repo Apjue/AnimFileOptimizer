@@ -44,6 +44,7 @@ int main()
 
     Nz::String inputFilepath;
     Nz::String outputFilepath;
+    long long pixelCount {};
 
     // Load image
     {
@@ -53,10 +54,18 @@ int main()
 
         std::cout << "Filepath of the output image [../output.png]: " << std::flush;
         std::getline(std::cin, outputFilepath);
+
+        Nz::String pixels;
+        std::cout << "Max vertical pixels between Y levels [" << MaxVerticalPixelsBetweenYLevels <<"]: " << std::flush;
+        std::getline(std::cin, pixels);
+
+        if (pixels.IsNumber())
+            pixels.ToInteger(&pixelCount);
     }
 
     inputFilepath = (inputFilepath == "" ? DefaultInputFile : inputFilepath);
     outputFilepath = (outputFilepath == "" ? DefaultOutputFile : outputFilepath);
+    MaxVerticalPixelsBetweenYLevels = (pixelCount > 0 && pixelCount < std::numeric_limits<unsigned>::max() ? pixelCount : MaxVerticalPixelsBetweenYLevels);
 
     if (!Nz::File::Exists(inputFilepath))
     {
