@@ -13,7 +13,7 @@
 #include <chrono>
 #include "imageutil.hpp"
 
-unsigned MaxVerticalPixelsBetweenYLevels { 15 };
+unsigned MaxVerticalPixelsBetweenYLevels { 7 };
 constexpr const char* DefaultInputFile { "../file.png" };
 constexpr const char* DefaultOutputFile { "../output.png" };
 
