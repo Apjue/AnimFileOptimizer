@@ -43,11 +43,11 @@ else
     platformData = {"x86", "x64"}
 end
 
-workspace "AnimFileMaker"
+workspace "AnimFileOptimizer"
     configurations { "Debug", "Release" }
     platforms(platformData)
     location(_ACTION)
-    startproject "AnimFileMaker"
+    startproject "AnimFileOptimizer"
 
     filter "platforms:x86"
         architecture "x86"
@@ -66,7 +66,7 @@ workspace "AnimFileMaker"
     end
 
 
-    project "AnimFileMaker"
+    project "AnimFileOptimizer"
         kind "ConsoleApp"
         language "C++"
 
@@ -100,13 +100,13 @@ workspace "AnimFileMaker"
             defines { "_CRT_SECURE_NO_WARNINGS", "_SCL_SECURE_NO_WARNINGS" } -- Used to suppress some errors
 
         filter "configurations:Debug"
-            defines { "TEAL_DEBUG", "NAZARA_DEBUG" }
-            targetname "Teal-debug"
+            defines { "ANIM_DEBUG", "NAZARA_DEBUG" }
+            targetname "afo-debug"
             links { "NazaraCore-d", "NazaraUtility-d" }
             symbols "on"
 
         filter "configurations:Release"
             defines { "NDEBUG" }
-            targetname "Teal-release"
+            targetname "afo-release"
             links { "NazaraCore", "NazaraUtility" }
             optimize "On"
